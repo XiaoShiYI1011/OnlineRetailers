@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OnlineRetailersDBModelStoreContainer" CdmEntityContainer="OnlineRetailersDBEntities">
+    <EntitySetMapping Name="BrowseRecords">
+      <EntityTypeMapping TypeName="OnlineRetailersDBModel.BrowseRecords">
+        <MappingFragment StoreEntitySet="BrowseRecords">
+          <ScalarProperty Name="RecordsID" ColumnName="RecordsID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="Recordsttate" ColumnName="Recordsttate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Business">
+      <EntityTypeMapping TypeName="OnlineRetailersDBModel.Business">
+        <MappingFragment StoreEntitySet="Business">
+          <ScalarProperty Name="BusinessID" ColumnName="BusinessID" />
+          <ScalarProperty Name="BusinessName" ColumnName="BusinessName" />
+          <ScalarProperty Name="BusinessIDCard" ColumnName="BusinessIDCard" />
+          <ScalarProperty Name="BusinessPhone" ColumnName="BusinessPhone" />
+          <ScalarProperty Name="BusinessAccount" ColumnName="BusinessAccount" />
+          <ScalarProperty Name="BusinessPwd" ColumnName="BusinessPwd" />
+          <ScalarProperty Name="BusinessImg" ColumnName="BusinessImg" />
+          <ScalarProperty Name="BusinessReview" ColumnName="BusinessReview" />
+          <ScalarProperty Name="IsOnline" ColumnName="IsOnline" />
+          <ScalarProperty Name="BusinessCreateTime" ColumnName="BusinessCreateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="City">
+      <EntityTypeMapping TypeName="OnlineRetailersDBModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comment">
+      <EntityTypeMapping TypeName="OnlineRetailersDBModel.Comment">
+        <MappingFragment StoreEntitySet="Comment">
+          <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="CommentTime" ColumnName="CommentTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommentReview">
+      <EntityTypeMapping TypeName="OnlineRetailersDBModel.CommentReview">
+        <MappingFragment StoreEntitySet="CommentReview">
+          <ScalarProperty Name="CommentReviewID" ColumnName="CommentReviewID" />
+          <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+          <ScalarProperty Name="CommentUserID" ColumnName="CommentUserID" />
+          <ScalarProperty Name="ReviewContent" ColumnName="ReviewContent" />
+          <ScalarProperty Name="ReviewCommentTime" ColumnName="ReviewCommentTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerService">
+      <EntityTypeMapping TypeName="OnlineRetailersDBModel.CustomerService">
+        <MappingFragment StoreEntitySet="CustomerService">
+          <ScalarProperty Name="CustomerServiceID" ColumnName="CustomerServiceID" />
+          <ScalarProperty Name="BusinessID" ColumnName="BusinessID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="ContentImg" ColumnName="ContentImg" />
+          <ScalarProperty Name="ReplyTime" ColumnName="ReplyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods">
+      <EntityTypeMapping TypeName="OnlineRetailersDBModel.Goods">
+        <MappingFragment StoreEntitySet="Goods">
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="GoodsTitle" ColumnName="GoodsTitle" />
+          <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="GoodsKeyWord" ColumnName="GoodsKeyWord" />
+          <ScalarProperty Name="GoodsAttribute" ColumnName="GoodsAttribute" />
+          <ScalarProperty Name="GoodsImg" ColumnName="GoodsImg" />
+          <ScalarProperty Name="GoodsPrice" ColumnName="GoodsPrice" />
+          <ScalarProperty Name="GoodsStock" ColumnName="GoodsStock" />
+          <ScalarProperty Name="GoodsSales" ColumnName="GoodsSales" />
+          <ScalarProperty Name="GoodsStatu" ColumnName="GoodsStatu" />
+          <ScalarProperty Name="ProductCreateTime" ColumnName="ProductCreateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="OnlineRetailersDBModel.Messages">
+        <MappingFragment StoreEntitySet="Messages">
+          <ScalarProperty Name="MessagesID" ColumnName="MessagesID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="BusinessID" ColumnName="BusinessID" />
+          <ScalarProperty Name="MessagesDetails" ColumnName="MessagesDetails" />
+          <ScalarProperty Name="Stuate" ColumnName="Stuate" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="MessagesTime" ColumnName="MessagesTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order">
+      <EntityTypeMapping TypeName="OnlineRetailersDBModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CartID" ColumnName="CartID" />
+          <ScalarProperty Name="OrderMoney" ColumnName="OrderMoney" />
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+          <ScalarProperty Name="ReasonForCancellation" ColumnName="ReasonForCancellation" />
+          <ScalarProperty Name="IsCancellation" ColumnName="IsCancellation" />
+          <ScalarProperty Name="DeliverGoodsTime" ColumnName="DeliverGoodsTime" />
+          <ScalarProperty Name="ReceivingTime" ColumnName="ReceivingTime" />
+          <ScalarProperty Name="CancelTime" ColumnName="CancelTime" />
+          <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductType">
+      <EntityTypeMapping TypeName="OnlineRetailersDBModel.ProductType">
+        <MappingFragment StoreEntitySet="ProductType">
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Province">
+      <EntityTypeMapping TypeName="OnlineRetailersDBModel.Province">
+        <MappingFragment StoreEntitySet="Province">
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecommendType">
+      <EntityTypeMapping TypeName="OnlineRetailersDBModel.RecommendType">
+        <MappingFragment StoreEntitySet="RecommendType">
+          <ScalarProperty Name="RecommendTypeID" ColumnName="RecommendTypeID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="KeyWork" ColumnName="KeyWork" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RobotService">
+      <EntityTypeMapping TypeName="OnlineRetailersDBModel.RobotService">
+        <MappingFragment StoreEntitySet="RobotService">
+          <ScalarProperty Name="RobotID" ColumnName="RobotID" />
+          <ScalarProperty Name="BusinessID" ColumnName="BusinessID" />
+          <ScalarProperty Name="ServiceKey" ColumnName="ServiceKey" />
+          <ScalarProperty Name="ReplyTime" ColumnName="ReplyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShoppingCart">
+      <EntityTypeMapping TypeName="OnlineRetailersDBModel.ShoppingCart">
+        <MappingFragment StoreEntitySet="ShoppingCart">
+          <ScalarProperty Name="CartID" ColumnName="CartID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="SelectAttributes" ColumnName="SelectAttributes" />
+          <ScalarProperty Name="IsSelect" ColumnName="IsSelect" />
+          <ScalarProperty Name="ProductNum" ColumnName="ProductNum" />
+          <ScalarProperty Name="IsOrder" ColumnName="IsOrder" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Store">
+      <EntityTypeMapping TypeName="OnlineRetailersDBModel.Store">
+        <MappingFragment StoreEntitySet="Store">
+          <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+          <ScalarProperty Name="BusinessID" ColumnName="BusinessID" />
+          <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+          <ScalarProperty Name="StoreDetails" ColumnName="StoreDetails" />
+          <ScalarProperty Name="StoreImg" ColumnName="StoreImg" />
+          <ScalarProperty Name="StoreRegion" ColumnName="StoreRegion" />
+          <ScalarProperty Name="StoreScore" ColumnName="StoreScore" />
+          <ScalarProperty Name="StoreHot" ColumnName="StoreHot" />
+          <ScalarProperty Name="StoreCreateTime" ColumnName="StoreCreateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfo">
+      <EntityTypeMapping TypeName="OnlineRetailersDBModel.UserInfo">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserAccount" ColumnName="UserAccount" />
+          <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+          <ScalarProperty Name="UserIDCard" ColumnName="UserIDCard" />
+          <ScalarProperty Name="UserPhone" ColumnName="UserPhone" />
+          <ScalarProperty Name="UserBirthday" ColumnName="UserBirthday" />
+          <ScalarProperty Name="UserCity" ColumnName="UserCity" />
+          <ScalarProperty Name="userProvince" ColumnName="userProvince" />
+          <ScalarProperty Name="UserImg" ColumnName="UserImg" />
+          <ScalarProperty Name="UserLikeWork" ColumnName="UserLikeWork" />
+          <ScalarProperty Name="UserCreateTime" ColumnName="UserCreateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRegion">
+      <EntityTypeMapping TypeName="OnlineRetailersDBModel.UserRegion">
+        <MappingFragment StoreEntitySet="UserRegion">
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="DetailedAddress" ColumnName="DetailedAddress" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

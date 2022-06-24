@@ -1,0 +1,632 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OnlineRetailersDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BrowseRecords">
+    <Key>
+      <PropertyRef Name="RecordsID" />
+    </Key>
+    <Property Name="RecordsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="GoodsID" Type="Int32" />
+    <Property Name="Recordsttate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="UserInfo" Relationship="Self.FK__BrowseRec__UserI__5AEE82B9" FromRole="BrowseRecords" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="Business">
+    <Key>
+      <PropertyRef Name="BusinessID" />
+    </Key>
+    <Property Name="BusinessID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BusinessName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BusinessIDCard" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+    <Property Name="BusinessPhone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BusinessAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BusinessPwd" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BusinessImg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BusinessReview" Type="Int32" />
+    <Property Name="IsOnline" Type="Int32" />
+    <Property Name="BusinessCreateTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="CustomerService" Relationship="Self.FK__CustomerS__Busin__38996AB5" FromRole="Business" ToRole="CustomerService" />
+    <NavigationProperty Name="Messages" Relationship="Self.FK__Messages__Busine__5FB337D6" FromRole="Business" ToRole="Messages" />
+    <NavigationProperty Name="RobotService" Relationship="Self.FK__RobotServ__Busin__3D5E1FD2" FromRole="Business" ToRole="RobotService" />
+    <NavigationProperty Name="Store" Relationship="Self.FK__Store__BusinessI__412EB0B6" FromRole="Business" ToRole="Store" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Province" Relationship="Self.FK__Province__CityID__267ABA7A" FromRole="City" ToRole="Province" />
+    <NavigationProperty Name="UserInfo" Relationship="Self.FK__UserInfo__UserCi__2B3F6F97" FromRole="City" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="GoodsID" Type="Int32" />
+    <Property Name="Content" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CommentTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK__Comment__GoodsID__7D439ABD" FromRole="Comment" ToRole="Goods" />
+    <NavigationProperty Name="UserInfo" Relationship="Self.FK__Comment__UserID__7C4F7684" FromRole="Comment" ToRole="UserInfo" />
+    <NavigationProperty Name="CommentReview" Relationship="Self.FK__CommentRe__Comme__01142BA1" FromRole="Comment" ToRole="CommentReview" />
+  </EntityType>
+  <EntityType Name="CommentReview">
+    <Key>
+      <PropertyRef Name="CommentReviewID" />
+    </Key>
+    <Property Name="CommentReviewID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CommentID" Type="Int32" />
+    <Property Name="CommentUserID" Type="Int32" />
+    <Property Name="ReviewContent" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ReviewCommentTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Comment" Relationship="Self.FK__CommentRe__Comme__01142BA1" FromRole="CommentReview" ToRole="Comment" />
+    <NavigationProperty Name="UserInfo" Relationship="Self.FK__CommentRe__Comme__02084FDA" FromRole="CommentReview" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="CustomerService">
+    <Key>
+      <PropertyRef Name="CustomerServiceID" />
+    </Key>
+    <Property Name="CustomerServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BusinessID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContentImg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ReplyTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Business" Relationship="Self.FK__CustomerS__Busin__38996AB5" FromRole="CustomerService" ToRole="Business" />
+    <NavigationProperty Name="UserInfo" Relationship="Self.FK__CustomerS__UserI__398D8EEE" FromRole="CustomerService" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="Goods">
+    <Key>
+      <PropertyRef Name="GoodsID" />
+    </Key>
+    <Property Name="GoodsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GoodsTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StoreID" Type="Int32" />
+    <Property Name="TypeId" Type="Int32" />
+    <Property Name="GoodsKeyWord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GoodsAttribute" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GoodsImg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GoodsPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="GoodsStock" Type="Int32" Nullable="false" />
+    <Property Name="GoodsSales" Type="Int32" />
+    <Property Name="GoodsStatu" Type="Int32" />
+    <Property Name="ProductCreateTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Comment" Relationship="Self.FK__Comment__GoodsID__7D439ABD" FromRole="Goods" ToRole="Comment" />
+    <NavigationProperty Name="Store" Relationship="Self.FK__Goods__StoreID__46E78A0C" FromRole="Goods" ToRole="Store" />
+    <NavigationProperty Name="ProductType" Relationship="Self.FK__Goods__TypeId__47DBAE45" FromRole="Goods" ToRole="ProductType" />
+    <NavigationProperty Name="ShoppingCart" Relationship="Self.FK__ShoppingC__Goods__5070F446" FromRole="Goods" ToRole="ShoppingCart" />
+  </EntityType>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="MessagesID" />
+    </Key>
+    <Property Name="MessagesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="BusinessID" Type="Int32" />
+    <Property Name="MessagesDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Stuate" Type="Int32" />
+    <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MessagesTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Business" Relationship="Self.FK__Messages__Busine__5FB337D6" FromRole="Messages" ToRole="Business" />
+    <NavigationProperty Name="UserInfo" Relationship="Self.FK__Messages__UserID__5EBF139D" FromRole="Messages" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="CartID" Type="Int32" />
+    <Property Name="OrderMoney" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="RegionID" Type="Int32" />
+    <Property Name="OrderStatus" Type="Int32" />
+    <Property Name="PaymentStatus" Type="Int32" />
+    <Property Name="ReasonForCancellation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsCancellation" Type="Int32" />
+    <Property Name="DeliverGoodsTime" Type="DateTime" Precision="0" />
+    <Property Name="ReceivingTime" Type="DateTime" Precision="0" />
+    <Property Name="CancelTime" Type="DateTime" Precision="0" />
+    <Property Name="OrderTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ShoppingCart" Relationship="Self.FK__Order__CartID__5629CD9C" FromRole="Order" ToRole="ShoppingCart" />
+    <NavigationProperty Name="UserRegion" Relationship="Self.FK__Order__RegionID__571DF1D5" FromRole="Order" ToRole="UserRegion" />
+    <NavigationProperty Name="UserInfo" Relationship="Self.FK__Order__UserID__5535A963" FromRole="Order" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="ProductType">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK__Goods__TypeId__47DBAE45" FromRole="ProductType" ToRole="Goods" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="ProvinceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProvinceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CityID" Type="Int32" />
+    <NavigationProperty Name="City" Relationship="Self.FK__Province__CityID__267ABA7A" FromRole="Province" ToRole="City" />
+    <NavigationProperty Name="UserInfo" Relationship="Self.FK__UserInfo__userPr__2C3393D0" FromRole="Province" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="RecommendType">
+    <Key>
+      <PropertyRef Name="RecommendTypeID" />
+    </Key>
+    <Property Name="RecommendTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="KeyWork" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="UserInfo" Relationship="Self.FK__Recommend__UserI__4CA06362" FromRole="RecommendType" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="RobotService">
+    <Key>
+      <PropertyRef Name="RobotID" />
+    </Key>
+    <Property Name="RobotID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BusinessID" Type="Int32" />
+    <Property Name="ServiceKey" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ReplyTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Business" Relationship="Self.FK__RobotServ__Busin__3D5E1FD2" FromRole="RobotService" ToRole="Business" />
+  </EntityType>
+  <EntityType Name="ShoppingCart">
+    <Key>
+      <PropertyRef Name="CartID" />
+    </Key>
+    <Property Name="CartID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="GoodsID" Type="Int32" />
+    <Property Name="SelectAttributes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsSelect" Type="Int32" />
+    <Property Name="ProductNum" Type="Int32" Nullable="false" />
+    <Property Name="IsOrder" Type="Int32" />
+    <Property Name="AddTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK__ShoppingC__Goods__5070F446" FromRole="ShoppingCart" ToRole="Goods" />
+    <NavigationProperty Name="Order" Relationship="Self.FK__Order__CartID__5629CD9C" FromRole="ShoppingCart" ToRole="Order" />
+    <NavigationProperty Name="UserInfo" Relationship="Self.FK__ShoppingC__UserI__4F7CD00D" FromRole="ShoppingCart" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="StoreID" />
+    </Key>
+    <Property Name="StoreID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BusinessID" Type="Int32" />
+    <Property Name="StoreName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StoreDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StoreImg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StoreRegion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StoreScore" Type="Int32" />
+    <Property Name="StoreHot" Type="Int32" />
+    <Property Name="StoreCreateTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Business" Relationship="Self.FK__Store__BusinessI__412EB0B6" FromRole="Store" ToRole="Business" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK__Goods__StoreID__46E78A0C" FromRole="Store" ToRole="Goods" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserPwd" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UserIDCard" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+    <Property Name="UserPhone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="UserBirthday" Type="DateTime" Precision="0" />
+    <Property Name="UserCity" Type="Int32" />
+    <Property Name="userProvince" Type="Int32" />
+    <Property Name="UserImg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UserLikeWork" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UserCreateTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="BrowseRecords" Relationship="Self.FK__BrowseRec__UserI__5AEE82B9" FromRole="UserInfo" ToRole="BrowseRecords" />
+    <NavigationProperty Name="City" Relationship="Self.FK__UserInfo__UserCi__2B3F6F97" FromRole="UserInfo" ToRole="City" />
+    <NavigationProperty Name="Comment" Relationship="Self.FK__Comment__UserID__7C4F7684" FromRole="UserInfo" ToRole="Comment" />
+    <NavigationProperty Name="CommentReview" Relationship="Self.FK__CommentRe__Comme__02084FDA" FromRole="UserInfo" ToRole="CommentReview" />
+    <NavigationProperty Name="CustomerService" Relationship="Self.FK__CustomerS__UserI__398D8EEE" FromRole="UserInfo" ToRole="CustomerService" />
+    <NavigationProperty Name="Messages" Relationship="Self.FK__Messages__UserID__5EBF139D" FromRole="UserInfo" ToRole="Messages" />
+    <NavigationProperty Name="Order" Relationship="Self.FK__Order__UserID__5535A963" FromRole="UserInfo" ToRole="Order" />
+    <NavigationProperty Name="Province" Relationship="Self.FK__UserInfo__userPr__2C3393D0" FromRole="UserInfo" ToRole="Province" />
+    <NavigationProperty Name="RecommendType" Relationship="Self.FK__Recommend__UserI__4CA06362" FromRole="UserInfo" ToRole="RecommendType" />
+    <NavigationProperty Name="ShoppingCart" Relationship="Self.FK__ShoppingC__UserI__4F7CD00D" FromRole="UserInfo" ToRole="ShoppingCart" />
+    <NavigationProperty Name="UserRegion" Relationship="Self.FK__UserRegio__UserI__30F848ED" FromRole="UserInfo" ToRole="UserRegion" />
+  </EntityType>
+  <EntityType Name="UserRegion">
+    <Key>
+      <PropertyRef Name="RegionID" />
+    </Key>
+    <Property Name="RegionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Province" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DetailedAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsDefault" Type="Int32" />
+    <NavigationProperty Name="Order" Relationship="Self.FK__Order__RegionID__571DF1D5" FromRole="UserRegion" ToRole="Order" />
+    <NavigationProperty Name="UserInfo" Relationship="Self.FK__UserRegio__UserI__30F848ED" FromRole="UserRegion" ToRole="UserInfo" />
+  </EntityType>
+  <Association Name="FK__BrowseRec__UserI__5AEE82B9">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="BrowseRecords" Type="Self.BrowseRecords" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="BrowseRecords">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CustomerS__Busin__38996AB5">
+    <End Role="Business" Type="Self.Business" Multiplicity="0..1" />
+    <End Role="CustomerService" Type="Self.CustomerService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="BusinessID" />
+      </Principal>
+      <Dependent Role="CustomerService">
+        <PropertyRef Name="BusinessID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Messages__Busine__5FB337D6">
+    <End Role="Business" Type="Self.Business" Multiplicity="0..1" />
+    <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="BusinessID" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="BusinessID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RobotServ__Busin__3D5E1FD2">
+    <End Role="Business" Type="Self.Business" Multiplicity="0..1" />
+    <End Role="RobotService" Type="Self.RobotService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="BusinessID" />
+      </Principal>
+      <Dependent Role="RobotService">
+        <PropertyRef Name="BusinessID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Store__BusinessI__412EB0B6">
+    <End Role="Business" Type="Self.Business" Multiplicity="0..1" />
+    <End Role="Store" Type="Self.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="BusinessID" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="BusinessID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Province__CityID__267ABA7A">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Province" Type="Self.Province" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Province">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserInfo__UserCi__2B3F6F97">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="UserCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comment__GoodsID__7D439ABD">
+    <End Role="Goods" Type="Self.Goods" Multiplicity="0..1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="GoodsID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="GoodsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comment__UserID__7C4F7684">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CommentRe__Comme__01142BA1">
+    <End Role="Comment" Type="Self.Comment" Multiplicity="0..1" />
+    <End Role="CommentReview" Type="Self.CommentReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comment">
+        <PropertyRef Name="CommentID" />
+      </Principal>
+      <Dependent Role="CommentReview">
+        <PropertyRef Name="CommentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CommentRe__Comme__02084FDA">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="CommentReview" Type="Self.CommentReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="CommentReview">
+        <PropertyRef Name="CommentUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CustomerS__UserI__398D8EEE">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="CustomerService" Type="Self.CustomerService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="CustomerService">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Goods__StoreID__46E78A0C">
+    <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+    <End Role="Goods" Type="Self.Goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="StoreID" />
+      </Principal>
+      <Dependent Role="Goods">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Goods__TypeId__47DBAE45">
+    <End Role="ProductType" Type="Self.ProductType" Multiplicity="0..1" />
+    <End Role="Goods" Type="Self.Goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductType">
+        <PropertyRef Name="TypeId" />
+      </Principal>
+      <Dependent Role="Goods">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ShoppingC__Goods__5070F446">
+    <End Role="Goods" Type="Self.Goods" Multiplicity="0..1" />
+    <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="GoodsID" />
+      </Principal>
+      <Dependent Role="ShoppingCart">
+        <PropertyRef Name="GoodsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Messages__UserID__5EBF139D">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order__CartID__5629CD9C">
+    <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShoppingCart">
+        <PropertyRef Name="CartID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CartID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order__RegionID__571DF1D5">
+    <End Role="UserRegion" Type="Self.UserRegion" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRegion">
+        <PropertyRef Name="RegionID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="RegionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order__UserID__5535A963">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserInfo__userPr__2C3393D0">
+    <End Role="Province" Type="Self.Province" Multiplicity="0..1" />
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Province">
+        <PropertyRef Name="ProvinceID" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="userProvince" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Recommend__UserI__4CA06362">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="RecommendType" Type="Self.RecommendType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="RecommendType">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ShoppingC__UserI__4F7CD00D">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="ShoppingCart">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserRegio__UserI__30F848ED">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="UserRegion" Type="Self.UserRegion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserRegion">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OnlineRetailersDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BrowseRecords" EntityType="Self.BrowseRecords" />
+    <EntitySet Name="Business" EntityType="Self.Business" />
+    <EntitySet Name="City" EntityType="Self.City" />
+    <EntitySet Name="Comment" EntityType="Self.Comment" />
+    <EntitySet Name="CommentReview" EntityType="Self.CommentReview" />
+    <EntitySet Name="CustomerService" EntityType="Self.CustomerService" />
+    <EntitySet Name="Goods" EntityType="Self.Goods" />
+    <EntitySet Name="Messages" EntityType="Self.Messages" />
+    <EntitySet Name="Order" EntityType="Self.Order" />
+    <EntitySet Name="ProductType" EntityType="Self.ProductType" />
+    <EntitySet Name="Province" EntityType="Self.Province" />
+    <EntitySet Name="RecommendType" EntityType="Self.RecommendType" />
+    <EntitySet Name="RobotService" EntityType="Self.RobotService" />
+    <EntitySet Name="ShoppingCart" EntityType="Self.ShoppingCart" />
+    <EntitySet Name="Store" EntityType="Self.Store" />
+    <EntitySet Name="UserInfo" EntityType="Self.UserInfo" />
+    <EntitySet Name="UserRegion" EntityType="Self.UserRegion" />
+    <AssociationSet Name="FK__BrowseRec__UserI__5AEE82B9" Association="Self.FK__BrowseRec__UserI__5AEE82B9">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="BrowseRecords" EntitySet="BrowseRecords" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CustomerS__Busin__38996AB5" Association="Self.FK__CustomerS__Busin__38996AB5">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="CustomerService" EntitySet="CustomerService" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Messages__Busine__5FB337D6" Association="Self.FK__Messages__Busine__5FB337D6">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RobotServ__Busin__3D5E1FD2" Association="Self.FK__RobotServ__Busin__3D5E1FD2">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="RobotService" EntitySet="RobotService" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Store__BusinessI__412EB0B6" Association="Self.FK__Store__BusinessI__412EB0B6">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="Store" EntitySet="Store" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Province__CityID__267ABA7A" Association="Self.FK__Province__CityID__267ABA7A">
+      <End Role="City" EntitySet="City" />
+      <End Role="Province" EntitySet="Province" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserInfo__UserCi__2B3F6F97" Association="Self.FK__UserInfo__UserCi__2B3F6F97">
+      <End Role="City" EntitySet="City" />
+      <End Role="UserInfo" EntitySet="UserInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comment__GoodsID__7D439ABD" Association="Self.FK__Comment__GoodsID__7D439ABD">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comment__UserID__7C4F7684" Association="Self.FK__Comment__UserID__7C4F7684">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CommentRe__Comme__01142BA1" Association="Self.FK__CommentRe__Comme__01142BA1">
+      <End Role="Comment" EntitySet="Comment" />
+      <End Role="CommentReview" EntitySet="CommentReview" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CommentRe__Comme__02084FDA" Association="Self.FK__CommentRe__Comme__02084FDA">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="CommentReview" EntitySet="CommentReview" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CustomerS__UserI__398D8EEE" Association="Self.FK__CustomerS__UserI__398D8EEE">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="CustomerService" EntitySet="CustomerService" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Goods__StoreID__46E78A0C" Association="Self.FK__Goods__StoreID__46E78A0C">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="Goods" EntitySet="Goods" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Goods__TypeId__47DBAE45" Association="Self.FK__Goods__TypeId__47DBAE45">
+      <End Role="ProductType" EntitySet="ProductType" />
+      <End Role="Goods" EntitySet="Goods" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ShoppingC__Goods__5070F446" Association="Self.FK__ShoppingC__Goods__5070F446">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="ShoppingCart" EntitySet="ShoppingCart" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Messages__UserID__5EBF139D" Association="Self.FK__Messages__UserID__5EBF139D">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order__CartID__5629CD9C" Association="Self.FK__Order__CartID__5629CD9C">
+      <End Role="ShoppingCart" EntitySet="ShoppingCart" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order__RegionID__571DF1D5" Association="Self.FK__Order__RegionID__571DF1D5">
+      <End Role="UserRegion" EntitySet="UserRegion" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order__UserID__5535A963" Association="Self.FK__Order__UserID__5535A963">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserInfo__userPr__2C3393D0" Association="Self.FK__UserInfo__userPr__2C3393D0">
+      <End Role="Province" EntitySet="Province" />
+      <End Role="UserInfo" EntitySet="UserInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Recommend__UserI__4CA06362" Association="Self.FK__Recommend__UserI__4CA06362">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="RecommendType" EntitySet="RecommendType" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ShoppingC__UserI__4F7CD00D" Association="Self.FK__ShoppingC__UserI__4F7CD00D">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="ShoppingCart" EntitySet="ShoppingCart" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserRegio__UserI__30F848ED" Association="Self.FK__UserRegio__UserI__30F848ED">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserRegion" EntitySet="UserRegion" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

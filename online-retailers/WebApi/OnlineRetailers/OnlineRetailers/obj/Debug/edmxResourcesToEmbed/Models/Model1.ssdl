@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OnlineRetailersDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BrowseRecords">
+    <Key>
+      <PropertyRef Name="RecordsID" />
+    </Key>
+    <Property Name="RecordsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="GoodsID" Type="int" />
+    <Property Name="Recordsttate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Business">
+    <Key>
+      <PropertyRef Name="BusinessID" />
+    </Key>
+    <Property Name="BusinessID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BusinessName" Type="varchar" MaxLength="50" />
+    <Property Name="BusinessIDCard" Type="varchar" MaxLength="18" />
+    <Property Name="BusinessPhone" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="BusinessAccount" Type="varchar" MaxLength="50" />
+    <Property Name="BusinessPwd" Type="varchar(max)" />
+    <Property Name="BusinessImg" Type="varchar(max)" />
+    <Property Name="BusinessReview" Type="int" />
+    <Property Name="IsOnline" Type="int" />
+    <Property Name="BusinessCreateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="GoodsID" Type="int" />
+    <Property Name="Content" Type="varchar" MaxLength="200" />
+    <Property Name="CommentTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CommentReview">
+    <Key>
+      <PropertyRef Name="CommentReviewID" />
+    </Key>
+    <Property Name="CommentReviewID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CommentID" Type="int" />
+    <Property Name="CommentUserID" Type="int" />
+    <Property Name="ReviewContent" Type="varchar" MaxLength="200" />
+    <Property Name="ReviewCommentTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CustomerService">
+    <Key>
+      <PropertyRef Name="CustomerServiceID" />
+    </Key>
+    <Property Name="CustomerServiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BusinessID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Content" Type="varchar(max)" />
+    <Property Name="ContentImg" Type="varchar(max)" />
+    <Property Name="ReplyTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Goods">
+    <Key>
+      <PropertyRef Name="GoodsID" />
+    </Key>
+    <Property Name="GoodsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsTitle" Type="varchar(max)" Nullable="false" />
+    <Property Name="StoreID" Type="int" />
+    <Property Name="TypeId" Type="int" />
+    <Property Name="GoodsKeyWord" Type="varchar" MaxLength="50" />
+    <Property Name="GoodsAttribute" Type="varchar(max)" />
+    <Property Name="GoodsImg" Type="varchar(max)" />
+    <Property Name="GoodsPrice" Type="money" Nullable="false" />
+    <Property Name="GoodsStock" Type="int" Nullable="false" />
+    <Property Name="GoodsSales" Type="int" />
+    <Property Name="GoodsStatu" Type="int" />
+    <Property Name="ProductCreateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="MessagesID" />
+    </Key>
+    <Property Name="MessagesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="BusinessID" Type="int" />
+    <Property Name="MessagesDetails" Type="nvarchar(max)" />
+    <Property Name="Stuate" Type="int" />
+    <Property Name="Type" Type="nvarchar" MaxLength="20" />
+    <Property Name="MessagesTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="CartID" Type="int" />
+    <Property Name="OrderMoney" Type="money" Nullable="false" />
+    <Property Name="RegionID" Type="int" />
+    <Property Name="OrderStatus" Type="int" />
+    <Property Name="PaymentStatus" Type="int" />
+    <Property Name="ReasonForCancellation" Type="varchar(max)" />
+    <Property Name="IsCancellation" Type="int" />
+    <Property Name="DeliverGoodsTime" Type="date" />
+    <Property Name="ReceivingTime" Type="date" />
+    <Property Name="CancelTime" Type="date" />
+    <Property Name="OrderTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProductType">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="ProvinceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProvinceName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CityID" Type="int" />
+  </EntityType>
+  <EntityType Name="RecommendType">
+    <Key>
+      <PropertyRef Name="RecommendTypeID" />
+    </Key>
+    <Property Name="RecommendTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="KeyWork" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="RobotService">
+    <Key>
+      <PropertyRef Name="RobotID" />
+    </Key>
+    <Property Name="RobotID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BusinessID" Type="int" />
+    <Property Name="ServiceKey" Type="varchar(max)" />
+    <Property Name="ReplyTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ShoppingCart">
+    <Key>
+      <PropertyRef Name="CartID" />
+    </Key>
+    <Property Name="CartID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="GoodsID" Type="int" />
+    <Property Name="SelectAttributes" Type="varchar(max)" />
+    <Property Name="IsSelect" Type="int" />
+    <Property Name="ProductNum" Type="int" Nullable="false" />
+    <Property Name="IsOrder" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="StoreID" />
+    </Key>
+    <Property Name="StoreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BusinessID" Type="int" />
+    <Property Name="StoreName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="StoreDetails" Type="varchar(max)" />
+    <Property Name="StoreImg" Type="varchar(max)" />
+    <Property Name="StoreRegion" Type="varchar(max)" />
+    <Property Name="StoreScore" Type="float" />
+    <Property Name="StoreHot" Type="int" />
+    <Property Name="StoreCreateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserAccount" Type="varchar" MaxLength="50" />
+    <Property Name="UserPwd" Type="varchar(max)" />
+    <Property Name="UserIDCard" Type="varchar" MaxLength="18" />
+    <Property Name="UserPhone" Type="varchar" MaxLength="11" />
+    <Property Name="UserBirthday" Type="date" />
+    <Property Name="UserCity" Type="int" />
+    <Property Name="userProvince" Type="int" />
+    <Property Name="UserImg" Type="varchar(max)" />
+    <Property Name="UserLikeWork" Type="varchar(max)" />
+    <Property Name="UserCreateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UserRegion">
+    <Key>
+      <PropertyRef Name="RegionID" />
+    </Key>
+    <Property Name="RegionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Province" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DetailedAddress" Type="varchar(max)" />
+    <Property Name="Phone" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="IsDefault" Type="int" />
+  </EntityType>
+  <Association Name="FK__BrowseRec__UserI__6477ECF3">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="BrowseRecords" Type="Self.BrowseRecords" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="BrowseRecords">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comment__GoodsID__5070F446">
+    <End Role="Goods" Type="Self.Goods" Multiplicity="0..1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="GoodsID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="GoodsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comment__UserID__4F7CD00D">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CommentRe__Comme__5441852A">
+    <End Role="Comment" Type="Self.Comment" Multiplicity="0..1" />
+    <End Role="CommentReview" Type="Self.CommentReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comment">
+        <PropertyRef Name="CommentID" />
+      </Principal>
+      <Dependent Role="CommentReview">
+        <PropertyRef Name="CommentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CommentRe__Comme__5535A963">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="CommentReview" Type="Self.CommentReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="CommentReview">
+        <PropertyRef Name="CommentUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CustomerS__Busin__38996AB5">
+    <End Role="Business" Type="Self.Business" Multiplicity="0..1" />
+    <End Role="CustomerService" Type="Self.CustomerService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="BusinessID" />
+      </Principal>
+      <Dependent Role="CustomerService">
+        <PropertyRef Name="BusinessID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CustomerS__UserI__398D8EEE">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="CustomerService" Type="Self.CustomerService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="CustomerService">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Goods__StoreID__46E78A0C">
+    <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+    <End Role="Goods" Type="Self.Goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="StoreID" />
+      </Principal>
+      <Dependent Role="Goods">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Goods__TypeId__47DBAE45">
+    <End Role="ProductType" Type="Self.ProductType" Multiplicity="0..1" />
+    <End Role="Goods" Type="Self.Goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductType">
+        <PropertyRef Name="TypeId" />
+      </Principal>
+      <Dependent Role="Goods">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Messages__Busine__693CA210">
+    <End Role="Business" Type="Self.Business" Multiplicity="0..1" />
+    <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="BusinessID" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="BusinessID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Messages__UserID__68487DD7">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order__CartID__5FB337D6">
+    <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShoppingCart">
+        <PropertyRef Name="CartID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CartID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order__RegionID__60A75C0F">
+    <End Role="UserRegion" Type="Self.UserRegion" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRegion">
+        <PropertyRef Name="RegionID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="RegionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order__UserID__5EBF139D">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Province__CityID__267ABA7A">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Province" Type="Self.Province" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Province">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Recommend__UserI__4CA06362">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="RecommendType" Type="Self.RecommendType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="RecommendType">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RobotServ__Busin__3D5E1FD2">
+    <End Role="Business" Type="Self.Business" Multiplicity="0..1" />
+    <End Role="RobotService" Type="Self.RobotService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="BusinessID" />
+      </Principal>
+      <Dependent Role="RobotService">
+        <PropertyRef Name="BusinessID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ShoppingC__Goods__59FA5E80">
+    <End Role="Goods" Type="Self.Goods" Multiplicity="0..1" />
+    <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="GoodsID" />
+      </Principal>
+      <Dependent Role="ShoppingCart">
+        <PropertyRef Name="GoodsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ShoppingC__UserI__59063A47">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="ShoppingCart">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Store__BusinessI__412EB0B6">
+    <End Role="Business" Type="Self.Business" Multiplicity="0..1" />
+    <End Role="Store" Type="Self.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="BusinessID" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="BusinessID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserInfo__UserCi__2B3F6F97">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="UserCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserInfo__userPr__2C3393D0">
+    <End Role="Province" Type="Self.Province" Multiplicity="0..1" />
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Province">
+        <PropertyRef Name="ProvinceID" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="userProvince" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserRegio__UserI__30F848ED">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="UserRegion" Type="Self.UserRegion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserRegion">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OnlineRetailersDBModelStoreContainer">
+    <EntitySet Name="BrowseRecords" EntityType="Self.BrowseRecords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Business" EntityType="Self.Business" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CommentReview" EntityType="Self.CommentReview" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerService" EntityType="Self.CustomerService" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Goods" EntityType="Self.Goods" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductType" EntityType="Self.ProductType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Province" EntityType="Self.Province" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RecommendType" EntityType="Self.RecommendType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RobotService" EntityType="Self.RobotService" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ShoppingCart" EntityType="Self.ShoppingCart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRegion" EntityType="Self.UserRegion" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__BrowseRec__UserI__6477ECF3" Association="Self.FK__BrowseRec__UserI__6477ECF3">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="BrowseRecords" EntitySet="BrowseRecords" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comment__GoodsID__5070F446" Association="Self.FK__Comment__GoodsID__5070F446">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comment__UserID__4F7CD00D" Association="Self.FK__Comment__UserID__4F7CD00D">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CommentRe__Comme__5441852A" Association="Self.FK__CommentRe__Comme__5441852A">
+      <End Role="Comment" EntitySet="Comment" />
+      <End Role="CommentReview" EntitySet="CommentReview" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CommentRe__Comme__5535A963" Association="Self.FK__CommentRe__Comme__5535A963">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="CommentReview" EntitySet="CommentReview" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CustomerS__Busin__38996AB5" Association="Self.FK__CustomerS__Busin__38996AB5">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="CustomerService" EntitySet="CustomerService" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CustomerS__UserI__398D8EEE" Association="Self.FK__CustomerS__UserI__398D8EEE">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="CustomerService" EntitySet="CustomerService" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Goods__StoreID__46E78A0C" Association="Self.FK__Goods__StoreID__46E78A0C">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="Goods" EntitySet="Goods" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Goods__TypeId__47DBAE45" Association="Self.FK__Goods__TypeId__47DBAE45">
+      <End Role="ProductType" EntitySet="ProductType" />
+      <End Role="Goods" EntitySet="Goods" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Messages__Busine__693CA210" Association="Self.FK__Messages__Busine__693CA210">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Messages__UserID__68487DD7" Association="Self.FK__Messages__UserID__68487DD7">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order__CartID__5FB337D6" Association="Self.FK__Order__CartID__5FB337D6">
+      <End Role="ShoppingCart" EntitySet="ShoppingCart" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order__RegionID__60A75C0F" Association="Self.FK__Order__RegionID__60A75C0F">
+      <End Role="UserRegion" EntitySet="UserRegion" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order__UserID__5EBF139D" Association="Self.FK__Order__UserID__5EBF139D">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Province__CityID__267ABA7A" Association="Self.FK__Province__CityID__267ABA7A">
+      <End Role="City" EntitySet="City" />
+      <End Role="Province" EntitySet="Province" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Recommend__UserI__4CA06362" Association="Self.FK__Recommend__UserI__4CA06362">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="RecommendType" EntitySet="RecommendType" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RobotServ__Busin__3D5E1FD2" Association="Self.FK__RobotServ__Busin__3D5E1FD2">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="RobotService" EntitySet="RobotService" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ShoppingC__Goods__59FA5E80" Association="Self.FK__ShoppingC__Goods__59FA5E80">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="ShoppingCart" EntitySet="ShoppingCart" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ShoppingC__UserI__59063A47" Association="Self.FK__ShoppingC__UserI__59063A47">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="ShoppingCart" EntitySet="ShoppingCart" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Store__BusinessI__412EB0B6" Association="Self.FK__Store__BusinessI__412EB0B6">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="Store" EntitySet="Store" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserInfo__UserCi__2B3F6F97" Association="Self.FK__UserInfo__UserCi__2B3F6F97">
+      <End Role="City" EntitySet="City" />
+      <End Role="UserInfo" EntitySet="UserInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserInfo__userPr__2C3393D0" Association="Self.FK__UserInfo__userPr__2C3393D0">
+      <End Role="Province" EntitySet="Province" />
+      <End Role="UserInfo" EntitySet="UserInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserRegio__UserI__30F848ED" Association="Self.FK__UserRegio__UserI__30F848ED">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserRegion" EntitySet="UserRegion" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

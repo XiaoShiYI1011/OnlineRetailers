@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineRetailers", "OnlineRetailers\OnlineRetailers.csproj", "{7080B374-5EBA-4DD0-BD6C-0B0EF671EAF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AopSdk", "alipay.trade.page.pay-DoNet-UTF-8\alipay-sdk-NET20170615110549\AopSdk.csproj", "{9C11CAE5-5188-4E71-825B-68FC3135728A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7080B374-5EBA-4DD0-BD6C-0B0EF671EAF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7080B374-5EBA-4DD0-BD6C-0B0EF671EAF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7080B374-5EBA-4DD0-BD6C-0B0EF671EAF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7080B374-5EBA-4DD0-BD6C-0B0EF671EAF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1AE2EE24-016F-4D01-8E8B-45029EA6210E}
+	EndGlobalSection
+EndGlobal

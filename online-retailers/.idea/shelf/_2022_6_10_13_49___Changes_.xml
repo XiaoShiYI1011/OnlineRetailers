@@ -1,0 +1,44 @@
+<changelist name="在进行更新之前于_2022_6_10_13_49_取消提交了变更_[Changes]" date="1654840151185" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2022_6_10_13_49_取消提交了变更_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="在进行更新之前于 2022/6/10 13:49 取消提交了变更 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="WebApi/OnlineRetailers/OnlineRetailers/bin/OnlineRetailers.dll" />
+    <option name="AFTER_PATH" value="WebApi/OnlineRetailers/OnlineRetailers/bin/OnlineRetailers.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2022_6_10_13_49_取消提交了变更_[Changes]/OnlineRetailers.dll" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="WebApi/OnlineRetailers/.vs/OnlineRetailers/v15/Server/sqlite3/storage.ide-shm" />
+    <option name="AFTER_PATH" value="WebApi/OnlineRetailers/.vs/OnlineRetailers/v15/Server/sqlite3/storage.ide-shm" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2022_6_10_13_49_取消提交了变更_[Changes]/storage.ide-shm" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="WebApi/OnlineRetailers/OnlineRetailers/obj/Debug/OnlineRetailers.dll" />
+    <option name="AFTER_PATH" value="WebApi/OnlineRetailers/OnlineRetailers/obj/Debug/OnlineRetailers.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2022_6_10_13_49_取消提交了变更_[Changes]/OnlineRetailers1.dll" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="WebApi/OnlineRetailers/.vs/OnlineRetailers/v15/Server/sqlite3/storage.ide" />
+    <option name="AFTER_PATH" value="WebApi/OnlineRetailers/.vs/OnlineRetailers/v15/Server/sqlite3/storage.ide" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2022_6_10_13_49_取消提交了变更_[Changes]/storage.ide" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="WebApi/OnlineRetailers/OnlineRetailers/obj/Debug/OnlineRetailers.pdb" />
+    <option name="AFTER_PATH" value="WebApi/OnlineRetailers/OnlineRetailers/obj/Debug/OnlineRetailers.pdb" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2022_6_10_13_49_取消提交了变更_[Changes]/OnlineRetailers.pdb" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="WebApi/OnlineRetailers/.vs/OnlineRetailers/v15/Server/sqlite3/storage.ide-wal" />
+    <option name="AFTER_PATH" value="WebApi/OnlineRetailers/.vs/OnlineRetailers/v15/Server/sqlite3/storage.ide-wal" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2022_6_10_13_49_取消提交了变更_[Changes]/storage.ide-wal" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="WebApi/OnlineRetailers/.vs/OnlineRetailers/v15/.suo" />
+    <option name="AFTER_PATH" value="WebApi/OnlineRetailers/.vs/OnlineRetailers/v15/.suo" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2022_6_10_13_49_取消提交了变更_[Changes]/.suo" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="WebApi/OnlineRetailers/OnlineRetailers/bin/OnlineRetailers.pdb" />
+    <option name="AFTER_PATH" value="WebApi/OnlineRetailers/OnlineRetailers/bin/OnlineRetailers.pdb" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2022_6_10_13_49_取消提交了变更_[Changes]/OnlineRetailers1.pdb" />
+  </binary>
+</changelist>

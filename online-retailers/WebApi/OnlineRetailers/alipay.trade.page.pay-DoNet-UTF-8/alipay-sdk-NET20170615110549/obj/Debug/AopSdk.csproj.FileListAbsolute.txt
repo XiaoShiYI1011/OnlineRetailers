@@ -1,0 +1,11 @@
+C:\Users\mengyu.wh\Desktop\alipay.trade.page.pay-DoNet-UTF-8\alipay-sdk-NET20170615110549\bin\Debug\AopSdk.dll
+C:\Users\mengyu.wh\Desktop\alipay.trade.page.pay-DoNet-UTF-8\alipay-sdk-NET20170615110549\bin\Debug\AopSdk.pdb
+C:\Users\mengyu.wh\Desktop\alipay.trade.page.pay-DoNet-UTF-8\alipay-sdk-NET20170615110549\obj\Debug\AopSdk.csprojResolveAssemblyReference.cache
+C:\Users\mengyu.wh\Desktop\alipay.trade.page.pay-DoNet-UTF-8\alipay-sdk-NET20170615110549\obj\Debug\AopSdk.dll
+C:\Users\mengyu.wh\Desktop\alipay.trade.page.pay-DoNet-UTF-8\alipay-sdk-NET20170615110549\obj\Debug\AopSdk.pdb
+C:\Users\yccc\OnlineRetailers\online-retailers\WebApi\OnlineRetailers\alipay.trade.page.pay-DoNet-UTF-8\alipay-sdk-NET20170615110549\bin\Debug\AopSdk.dll
+C:\Users\yccc\OnlineRetailers\online-retailers\WebApi\OnlineRetailers\alipay.trade.page.pay-DoNet-UTF-8\alipay-sdk-NET20170615110549\bin\Debug\AopSdk.pdb
+C:\Users\yccc\OnlineRetailers\online-retailers\WebApi\OnlineRetailers\alipay.trade.page.pay-DoNet-UTF-8\alipay-sdk-NET20170615110549\obj\Debug\AopSdk.csproj.AssemblyReference.cache
+C:\Users\yccc\OnlineRetailers\online-retailers\WebApi\OnlineRetailers\alipay.trade.page.pay-DoNet-UTF-8\alipay-sdk-NET20170615110549\obj\Debug\AopSdk.csproj.CoreCompileInputs.cache
+C:\Users\yccc\OnlineRetailers\online-retailers\WebApi\OnlineRetailers\alipay.trade.page.pay-DoNet-UTF-8\alipay-sdk-NET20170615110549\obj\Debug\AopSdk.dll
+C:\Users\yccc\OnlineRetailers\online-retailers\WebApi\OnlineRetailers\alipay.trade.page.pay-DoNet-UTF-8\alipay-sdk-NET20170615110549\obj\Debug\AopSdk.pdb

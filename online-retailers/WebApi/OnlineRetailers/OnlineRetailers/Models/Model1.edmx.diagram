@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1df4882dac25453e906c4741989d4737" Name="Diagram1">
+        <EntityTypeShape EntityType="OnlineRetailersDBModel.BrowseRecords" Width="1.5" PointX="7.5" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineRetailersDBModel.Business" Width="1.5" PointX="3.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineRetailersDBModel.City" Width="1.5" PointX="0.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineRetailersDBModel.Comment" Width="1.5" PointX="7.5" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineRetailersDBModel.CommentReview" Width="1.5" PointX="12.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineRetailersDBModel.CustomerService" Width="1.5" PointX="10.5" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineRetailersDBModel.Goods" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineRetailersDBModel.Messages" Width="1.5" PointX="7.5" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineRetailersDBModel.Order" Width="1.5" PointX="9.75" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineRetailersDBModel.ProductType" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineRetailersDBModel.Province" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineRetailersDBModel.RecommendType" Width="1.5" PointX="7.5" PointY="28.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineRetailersDBModel.RobotService" Width="1.5" PointX="6" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineRetailersDBModel.ShoppingCart" Width="1.5" PointX="10.5" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineRetailersDBModel.Store" Width="1.5" PointX="6" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineRetailersDBModel.UserInfo" Width="1.5" PointX="5.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineRetailersDBModel.UserRegion" Width="1.5" PointX="7.5" PointY="34.75" IsExpanded="true" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__BrowseRec__UserI__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__CustomerS__Busin__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__Messages__Busine__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__RobotServ__Busin__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__Store__BusinessI__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__Province__CityID__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__UserInfo__UserCi__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__Comment__GoodsID__7D439ABD" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__Comment__UserID__7C4F7684" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__CommentRe__Comme__01142BA1" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__CommentRe__Comme__02084FDA" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__CustomerS__UserI__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__Goods__StoreID__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__Goods__TypeId__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__ShoppingC__Goods__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__Messages__UserID__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__Order__CartID__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__Order__RegionID__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__Order__UserID__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__UserInfo__userPr__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__Recommend__UserI__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__ShoppingC__UserI__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineRetailersDBModel.FK__UserRegio__UserI__30F848ED" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
